@@ -7,9 +7,6 @@ class App extends Component {
   state = {  
     counters: [
         { id: 1, notDone: true },
-        { id: 2, notDone: true },
-        { id: 3, notDone: true },
-        { id: 4, notDone: true },
     ]
 }; 
 
@@ -38,7 +35,8 @@ handleReset = () => {
 
     return c;
   });
-    this.setState({ counters });
+  alert("all tasks are reset");
+  this.setState({ counters });
 };
 
 handleAdd = counter => {
@@ -65,6 +63,16 @@ handleCheck = counter => {
   }
 };
 
+handleSetTask = counterId => {
+  const counters = [...this.state.counters];
+  const singleTask = this.state.counters.find(c => c.id !== counterId);
+  
+  //set textfield value
+  document.getElementById("task").setAttribute = true;
+
+  this.setState({ counters });
+}
+
   render() {
     return ( 
       <React.Fragment>
@@ -79,6 +87,7 @@ handleCheck = counter => {
             onDelete = {this.handleDelete}
             onAdd = {this.handleAdd}
             onCheck = {this.handleCheck}
+            onSetTask = {this.handleSetTask}
           />
       </main>
       </React.Fragment>

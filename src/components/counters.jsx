@@ -19,6 +19,7 @@ class Counters extends Component {
                     onIncrement = {this.props.onIncrement}
                     counter = {counter}
                     onCheck = {this.props.onCheck}
+                    onSetTask = {this.props.onSetTask}
                 />)} 
         </div>);
     }
